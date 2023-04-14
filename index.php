@@ -1,9 +1,30 @@
 <?php
 
+/**
+ * Movie
+ */
 class Movie {
     public string $title;
     private string $length;
-
+    
+    /**
+     * __construct
+     *
+     * @param  mixed $title
+     * @param  mixed $duration
+     * @return void
+     */
+    public function __construct(string $title, int $duration) {
+        $this -> title = $title;
+        $this -> setLength($duration);
+    }
+    
+    /**
+     * setLength
+     *
+     * @param  mixed $duration      Assegna al film il valore corto, medio o lungo a seconda della durata
+     * @return void
+     */
     public function setLength(int $duration) {
         if ($duration < 80) {
             $this -> length = 'Short';
@@ -13,32 +34,27 @@ class Movie {
             $this -> length = 'Medium';
         }
     }
-
+    
+    /**
+     * getLength
+     *
+     * @return void
+     */
     public function getLength() {
         return $this -> length;
     }
 }
 
-$drive = new Movie();
-$drive -> title = 'Drive';
-$drive -> setLength(100);
+// Oggetti istanziati
+
+$drive = new Movie('Drive', 100);
 var_dump($drive);
-var_dump($drive -> getLength());
 
-$annihilation = new Movie();
-$annihilation -> title = 'Annihilation';
-$annihilation -> setLength(120);
+$annihilation = new Movie('Annihilation', 120);
 var_dump($annihilation);
-var_dump($annihilation -> title);
 
-$mulholland_drive = new Movie();
-$mulholland_drive -> title = 'Mulholland Drive';
-$mulholland_drive -> setLength(157);
+$mulholland_drive = new Movie('Mulholland Drive', 157);
 var_dump($mulholland_drive);
-var_dump($mulholland_drive -> title);
 
-$hotel_chevalier = new Movie();
-$hotel_chevalier -> title = 'Hotel Chevalier';
-$hotel_chevalier -> setLength(13);
+$hotel_chevalier = new Movie('Hotel Chevalier', 13);
 var_dump($hotel_chevalier);
-var_dump($hotel_chevalier -> getLength());
