@@ -48,13 +48,17 @@ class Movie {
 // Oggetti istanziati
 
 $drive = new Movie('Drive', 100);
-var_dump($drive);
+echo $drive -> title;
+echo $drive -> getLength();
 
 $annihilation = new Movie('Annihilation', 120);
-var_dump($annihilation);
+echo $annihilation -> title;
+echo $annihilation -> getLength();
 
 $mulholland_drive = new Movie('Mulholland Drive', 157);
-var_dump($mulholland_drive);
+echo $mulholland_drive -> title;
+echo $mulholland_drive -> getLength();
 
 $hotel_chevalier = new Movie('Hotel Chevalier', 13);
-var_dump($hotel_chevalier);
+echo $hotel_chevalier -> title;
+echo $hotel_chevalier -> getLength();
