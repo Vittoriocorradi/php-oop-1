@@ -6,6 +6,7 @@
 class Movie {
     public string $title;
     private string $length;
+    public array $genres;
     
     /**
      * __construct
@@ -14,9 +15,10 @@ class Movie {
      * @param  mixed $duration
      * @return void
      */
-    public function __construct(string $title, int $duration) {
+    public function __construct(string $title, int $duration, array $genres) {
         $this -> title = $title;
         $this -> setLength($duration);
+        $this -> genres = $genres;
     }
     
     /**
@@ -47,18 +49,22 @@ class Movie {
 
 // Oggetti istanziati
 
-$drive = new Movie('Drive', 100);
+$drive = new Movie('Drive', 100, ['Action', 'Noir', 'Thriller']);
 echo $drive -> title;
 echo $drive -> getLength();
+var_dump($drive -> genres);
 
-$annihilation = new Movie('Annihilation', 120);
+$annihilation = new Movie('Annihilation', 120, ['Horror', 'Scifi']);
 echo $annihilation -> title;
 echo $annihilation -> getLength();
+var_dump($annihilation -> genres);
 
-$mulholland_drive = new Movie('Mulholland Drive', 157);
+$mulholland_drive = new Movie('Mulholland Drive', 157, ['Psychological thriller', 'Mystery']);
 echo $mulholland_drive -> title;
 echo $mulholland_drive -> getLength();
+var_dump($mulholland_drive -> genres);
 
-$hotel_chevalier = new Movie('Hotel Chevalier', 13);
+$hotel_chevalier = new Movie('Hotel Chevalier', 13, ['Romance', 'Drama', 'Short']);
 echo $hotel_chevalier -> title;
 echo $hotel_chevalier -> getLength();
+var_dump($hotel_chevalier -> genres);
